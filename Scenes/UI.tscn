@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://ylfpdd1ocku5"]
+
+[ext_resource type="Script" path="res://Scripts/ui.gd" id="1_byxbc"]
+[ext_resource type="PackedScene" uid="uid://b5kjvdhauun8r" path="res://Scenes/text_box.tscn" id="2_3dwae"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_byxbc")
+
+[node name="TypingTimer" type="Timer" parent="."]
+wait_time = 0.04
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextBox" parent="CanvasLayer" instance=ExtResource("2_3dwae")]
+
+[connection signal="timeout" from="TypingTimer" to="." method="_on_typing_timer_timeout"]
+
+[editable path="CanvasLayer/TextBox"]

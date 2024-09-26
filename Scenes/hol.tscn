@@ -1,0 +1,117 @@
+[gd_scene load_steps=16 format=3 uid="uid://c2y8hyxcbo5ch"]
+
+[ext_resource type="Script" path="res://Scripts/hol.gd" id="1_l3n6y"]
+[ext_resource type="Texture2D" uid="uid://cabssyp24he20" path="res://Assets/Sprites/hol.png" id="1_ycslu"]
+[ext_resource type="Texture2D" uid="uid://bj2cp0jk6oq7a" path="res://Assets/Sprites/hol_cu_scara.png" id="2_ewf3j"]
+[ext_resource type="Texture2D" uid="uid://b3og2ns4tln3y" path="res://Assets/Sprites/usa_baye.png" id="4_3otgr"]
+[ext_resource type="Texture2D" uid="uid://bufdbs3hpak68" path="res://Assets/Sprites/door.png" id="5_vsdgc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bejo"]
+size = Vector2(188, 428)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m6mhs"]
+size = Vector2(3832.5, 13.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_phr23"]
+size = Vector2(8, 299.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88p2c"]
+size = Vector2(1814, 13.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i02x0"]
+size = Vector2(678.5, 13.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ofkms"]
+size = Vector2(452.5, 13.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mkvw"]
+size = Vector2(299.25, 13.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m07kn"]
+size = Vector2(789.421, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwej2"]
+size = Vector2(800.672, 11.5752)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yj71"]
+size = Vector2(189, 429)
+
+[node name="hol" type="Node2D"]
+script = ExtResource("1_l3n6y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(12.8, 14.4)
+texture = ExtResource("1_ycslu")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(2879, 540)
+scale = Vector2(12.8, 14.4)
+texture = ExtResource("2_ewf3j")
+
+[node name="capatu_holului" type="Area2D" parent="."]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="capatu_holului"]
+position = Vector2(2814, 578)
+shape = SubResource("RectangleShape2D_3bejo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1919.75, 1085.25)
+shape = SubResource("RectangleShape2D_m6mhs")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-8, 939.75)
+shape = SubResource("RectangleShape2D_phr23")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(897, 768.75)
+shape = SubResource("RectangleShape2D_88p2c")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2369.5, 769)
+shape = SubResource("RectangleShape2D_i02x0")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3143.75, 769)
+shape = SubResource("RectangleShape2D_ofkms")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3852, 943.375)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_6mkvw")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3787, 395)
+rotation = 1.39626
+shape = SubResource("RectangleShape2D_m07kn")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3435.22, 394.249)
+rotation = 1.39626
+shape = SubResource("RectangleShape2D_lwej2")
+
+[node name="UsaBaye" type="Sprite2D" parent="."]
+position = Vector2(1918, 623)
+scale = Vector2(10, 10)
+texture = ExtResource("4_3otgr")
+
+[node name="UsaBaye2" type="Sprite2D" parent="."]
+position = Vector2(2814, 578)
+scale = Vector2(12.5, 14.423)
+texture = ExtResource("5_vsdgc")
+
+[node name="usa_baye" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="usa_baye"]
+position = Vector2(1923.5, 577.5)
+shape = SubResource("RectangleShape2D_0yj71")
+
+[node name="HolCuScara" type="Sprite2D" parent="."]
+position = Vector2(3902, 540)
+scale = Vector2(12.7933, 14.4)
+
+[connection signal="body_entered" from="capatu_holului" to="." method="_on_capatu_holului_body_entered"]
+[connection signal="body_entered" from="usa_baye" to="." method="_on_usa_baye_body_entered"]

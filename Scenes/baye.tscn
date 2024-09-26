@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://bf0sv57jib6bb"]
+
+[ext_resource type="Texture2D" uid="uid://ddl23lapqrna0" path="res://Assets/Sprites/baie.png" id="1_br7uj"]
+[ext_resource type="Script" path="res://Scripts/baye.gd" id="1_h5i6u"]
+[ext_resource type="Texture2D" uid="uid://b3og2ns4tln3y" path="res://Assets/Sprites/usa_baye.png" id="2_m3f4q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b58lj"]
+size = Vector2(160.5, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7o3t8"]
+size = Vector2(1932, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3qph"]
+size = Vector2(1040, 5.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vl5lw"]
+size = Vector2(534.25, 4.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmomj"]
+size = Vector2(13, 347.715)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pa3t0"]
+size = Vector2(13, 347.715)
+
+[node name="baye" type="Node2D"]
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_h5i6u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960.25, 540)
+scale = Vector2(5.48429, 6.17143)
+texture = ExtResource("1_br7uj")
+
+[node name="Door" type="Sprite2D" parent="."]
+position = Vector2(164, 578)
+scale = Vector2(8.5, 8.5)
+texture = ExtResource("2_m3f4q")
+
+[node name="usa_baye" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="usa_baye"]
+position = Vector2(167.75, 708.5)
+shape = SubResource("RectangleShape2D_b58lj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(956, 1080)
+shape = SubResource("RectangleShape2D_7o3t8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1312, 729.25)
+shape = SubResource("RectangleShape2D_e3qph")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(521, 723)
+shape = SubResource("RectangleShape2D_vl5lw")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(31.3613, 891.891)
+rotation = 0.20944
+shape = SubResource("RectangleShape2D_nmomj")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1882, 901)
+rotation = -0.244346
+shape = SubResource("RectangleShape2D_pa3t0")
+
+[connection signal="body_entered" from="usa_baye" to="." method="_on_usa_baye_body_entered"]

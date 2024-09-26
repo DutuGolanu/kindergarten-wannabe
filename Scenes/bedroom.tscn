@@ -1,0 +1,100 @@
+[gd_scene load_steps=11 format=3 uid="uid://ceycm0h1q58w7"]
+
+[ext_resource type="Script" path="res://Scripts/bedroom.gd" id="1_7ui12"]
+[ext_resource type="Texture2D" uid="uid://s1ssumwxhuq6" path="res://Assets/Sprites/room.png" id="1_qcn6s"]
+[ext_resource type="Texture2D" uid="uid://bdea3xwfohiht" path="res://Assets/Sprites/bottom_half_bedroom.png" id="2_vw4sn"]
+[ext_resource type="Texture2D" uid="uid://bufdbs3hpak68" path="res://Assets/Sprites/door.png" id="3_6ycx7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ccmsw"]
+size = Vector2(60, 428.041)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rissn"]
+size = Vector2(48, 989)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0slm"]
+size = Vector2(3837, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pp81x"]
+size = Vector2(3125.5, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41txy"]
+size = Vector2(247, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uhyw5"]
+size = Vector2(213, 43)
+
+[node name="Bedroom" type="Node2D"]
+script = ExtResource("1_7ui12")
+
+[node name="Perete" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(12.8, 14.4)
+texture = ExtResource("1_qcn6s")
+centered = false
+
+[node name="Perete2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1920, 0)
+scale = Vector2(12.8, 14.4)
+texture = ExtResource("1_qcn6s")
+centered = false
+flip_h = true
+
+[node name="Podea" type="Sprite2D" parent="."]
+position = Vector2(0, 1080)
+scale = Vector2(12.8, 14.4)
+texture = ExtResource("2_vw4sn")
+centered = false
+
+[node name="Podea2" type="Sprite2D" parent="."]
+position = Vector2(1920, 1080)
+scale = Vector2(12.8, 14.4)
+texture = ExtResource("2_vw4sn")
+centered = false
+flip_h = true
+
+[node name="Door" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(3359, 552)
+scale = Vector2(15, 15)
+texture = ExtResource("3_6ycx7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(23.8079, 953.805)
+rotation = 0.279253
+shape = SubResource("RectangleShape2D_ccmsw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3816.19, 953.805)
+rotation = -0.279253
+shape = SubResource("RectangleShape2D_ccmsw")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-25, 1665.5)
+shape = SubResource("RectangleShape2D_rissn")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3865, 1665.5)
+shape = SubResource("RectangleShape2D_rissn")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1920.5, 2180)
+shape = SubResource("RectangleShape2D_l0slm")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1678.25, 753)
+shape = SubResource("RectangleShape2D_pp81x")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3600.5, 753)
+shape = SubResource("RectangleShape2D_41txy")
+
+[node name="Usa" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Usa"]
+position = Vector2(3359, 754.5)
+shape = SubResource("RectangleShape2D_uhyw5")
+
+[connection signal="body_entered" from="Usa" to="." method="_on_usa_body_entered"]

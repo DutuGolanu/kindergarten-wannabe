@@ -1,0 +1,237 @@
+[gd_scene load_steps=18 format=3 uid="uid://bfkrt6b7xbuu1"]
+
+[ext_resource type="Texture2D" uid="uid://bo23s2n1rsij3" path="res://Assets/Sprites/gard.png" id="1_4vj6j"]
+[ext_resource type="Script" path="res://Scripts/afara_sccoala.gd" id="1_m4501"]
+[ext_resource type="Texture2D" uid="uid://b5jm28tid1q2w" path="res://Assets/Sprites/gard_partial.png" id="2_put3j"]
+[ext_resource type="Texture2D" uid="uid://t6jjj4hfbrks" path="res://Assets/Sprites/gard_lateral.png" id="3_dec01"]
+[ext_resource type="Texture2D" uid="uid://b5flxnlpesngd" path="res://Assets/Sprites/scoala.png" id="4_0pise"]
+[ext_resource type="Texture2D" uid="uid://c2ekbw3twjeqj" path="res://Assets/Sprites/school_door.png" id="5_rkrmy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5msx"]
+size = Vector2(1465, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vkrvj"]
+size = Vector2(1436, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxvbp"]
+size = Vector2(49, 2115)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xp86t"]
+size = Vector2(58.5, 2103)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5fgd"]
+size = Vector2(333.5, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifaeg"]
+size = Vector2(352, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n53re"]
+size = Vector2(863, 95)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20f1m"]
+size = Vector2(13, 395.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6s5tp"]
+size = Vector2(55, 234.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kqed"]
+size = Vector2(2960.5, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dix4b"]
+size = Vector2(534, 86)
+
+[node name="CurteaScolii" type="Node2D"]
+script = ExtResource("1_m4501")
+
+[node name="gard" type="Sprite2D" parent="."]
+position = Vector2(960.5, 539)
+scale = Vector2(15.975, 17.9667)
+texture = ExtResource("1_4vj6j")
+
+[node name="borders" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders"]
+position = Vector2(141.5, 833)
+shape = SubResource("RectangleShape2D_m5msx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="borders"]
+position = Vector2(1777, 833)
+shape = SubResource("RectangleShape2D_vkrvj")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="borders"]
+position = Vector2(-568.5, -245.5)
+shape = SubResource("RectangleShape2D_lxvbp")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="borders"]
+position = Vector2(2459.75, -239.5)
+shape = SubResource("RectangleShape2D_xp86t")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="borders"]
+position = Vector2(-374.75, -1276.5)
+shape = SubResource("RectangleShape2D_f5fgd")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="borders"]
+position = Vector2(2251, -1261)
+shape = SubResource("RectangleShape2D_ifaeg")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="borders"]
+z_index = 1
+position = Vector2(223, -1259.5)
+shape = SubResource("RectangleShape2D_n53re")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="borders"]
+z_index = 1
+position = Vector2(1635.5, -1259.5)
+shape = SubResource("RectangleShape2D_n53re")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="borders"]
+z_index = 1
+position = Vector2(635.5, -1010.5)
+shape = SubResource("RectangleShape2D_20f1m")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="borders"]
+z_index = 1
+position = Vector2(1244, -1009.75)
+shape = SubResource("RectangleShape2D_20f1m")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="borders"]
+position = Vector2(-567.625, 964.75)
+shape = SubResource("RectangleShape2D_6s5tp")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="borders"]
+position = Vector2(2460.5, 964.75)
+shape = SubResource("RectangleShape2D_6s5tp")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="borders"]
+position = Vector2(945.75, 1075)
+shape = SubResource("RectangleShape2D_0kqed")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_left = -456.0
+offset_top = -1169.0
+offset_right = 2333.0
+offset_bottom = 724.0
+color = Color(0.313726, 0.74902, 0.313726, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+z_index = -1
+layout_mode = 0
+offset_left = -154.0
+offset_top = -1659.0
+offset_right = 2964.0
+offset_bottom = 2253.0
+color = Color(0.211872, 0.211523, 0.218812, 1)
+
+[node name="GardPartial" type="Sprite2D" parent="."]
+position = Vector2(1902, 7.27596e-12)
+scale = Vector2(15.975, 17.967)
+texture = ExtResource("2_put3j")
+centered = false
+flip_h = true
+
+[node name="GardLateral" type="Sprite2D" parent="."]
+position = Vector2(-767, 438)
+scale = Vector2(12.05, 20)
+texture = ExtResource("3_dec01")
+
+[node name="GardLateral2" type="Sprite2D" parent="GardLateral"]
+position = Vector2(2.28882e-05, -14)
+texture = ExtResource("3_dec01")
+
+[node name="GardLateral3" type="Sprite2D" parent="GardLateral"]
+position = Vector2(0, -28)
+texture = ExtResource("3_dec01")
+
+[node name="GardLateral4" type="Sprite2D" parent="GardLateral"]
+position = Vector2(0, -42)
+texture = ExtResource("3_dec01")
+
+[node name="GardLateral5" type="Sprite2D" parent="GardLateral"]
+position = Vector2(0, -56.05)
+texture = ExtResource("3_dec01")
+
+[node name="GardLateral6" type="Sprite2D" parent="GardLateral"]
+position = Vector2(0, -70.05)
+texture = ExtResource("3_dec01")
+
+[node name="GardLateral14" type="Sprite2D" parent="GardLateral"]
+position = Vector2(0, -82.1)
+texture = ExtResource("3_dec01")
+
+[node name="GardLateral15" type="Sprite2D" parent="GardLateral"]
+position = Vector2(32.7971, -94.9649)
+rotation = 1.5708
+scale = Vector2(0.560998, 1.39015)
+texture = ExtResource("3_dec01")
+
+[node name="GardLateral16" type="Sprite2D" parent="GardLateral"]
+position = Vector2(52.2822, -94.95)
+rotation = 1.5708
+scale = Vector2(0.560998, 1.39015)
+texture = ExtResource("3_dec01")
+
+[node name="GardLateral17" type="Sprite2D" parent="GardLateral"]
+position = Vector2(258.34, -94.3)
+rotation = 1.5708
+scale = Vector2(0.560998, 1.39015)
+texture = ExtResource("3_dec01")
+
+[node name="GardLateral18" type="Sprite2D" parent="GardLateral"]
+position = Vector2(238.838, -94.3)
+rotation = 1.5708
+scale = Vector2(0.560998, 1.39015)
+texture = ExtResource("3_dec01")
+
+[node name="GardLateral7" type="Sprite2D" parent="GardLateral"]
+position = Vector2(251.369, 0.55)
+texture = ExtResource("3_dec01")
+
+[node name="GardLateral8" type="Sprite2D" parent="GardLateral"]
+position = Vector2(251.369, -13.45)
+texture = ExtResource("3_dec01")
+
+[node name="GardLateral9" type="Sprite2D" parent="GardLateral"]
+position = Vector2(251.369, -27.45)
+texture = ExtResource("3_dec01")
+
+[node name="GardLateral10" type="Sprite2D" parent="GardLateral"]
+position = Vector2(251.369, -41.45)
+texture = ExtResource("3_dec01")
+
+[node name="GardLateral11" type="Sprite2D" parent="GardLateral"]
+position = Vector2(251.369, -55.45)
+texture = ExtResource("3_dec01")
+
+[node name="GardLateral12" type="Sprite2D" parent="GardLateral"]
+position = Vector2(251.369, -69.5)
+texture = ExtResource("3_dec01")
+
+[node name="GardLateral13" type="Sprite2D" parent="GardLateral"]
+position = Vector2(251.535, -81.5)
+texture = ExtResource("3_dec01")
+
+[node name="Scoala" type="Sprite2D" parent="."]
+position = Vector2(1060, -1980)
+scale = Vector2(16, 16)
+texture = ExtResource("4_0pise")
+
+[node name="GardPartial2" type="Sprite2D" parent="."]
+position = Vector2(-588.007, 8.23994e-18)
+scale = Vector2(15.975, 17.967)
+texture = ExtResource("2_put3j")
+centered = false
+flip_h = true
+
+[node name="SchoolDoor" type="Sprite2D" parent="."]
+position = Vector2(928, -1480)
+scale = Vector2(18, 18)
+texture = ExtResource("5_rkrmy")
+
+[node name="UsaScolii" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UsaScolii"]
+position = Vector2(931, -1259)
+shape = SubResource("RectangleShape2D_dix4b")
+
+[connection signal="body_entered" from="UsaScolii" to="." method="_on_usa_scolii_body_entered"]

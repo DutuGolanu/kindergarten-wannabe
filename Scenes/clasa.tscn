@@ -1,0 +1,152 @@
+[gd_scene load_steps=13 format=3 uid="uid://362cpa81sc0o"]
+
+[ext_resource type="Texture2D" uid="uid://b6s7rghxuqg34" path="res://Assets/Sprites/clasa.png" id="1_iw6ha"]
+[ext_resource type="Script" path="res://Scripts/clasa.gd" id="1_xhptp"]
+[ext_resource type="Texture2D" uid="uid://bufdbs3hpak68" path="res://Assets/Sprites/door.png" id="2_cxh2d"]
+[ext_resource type="Texture2D" uid="uid://b7d72wnowwy0h" path="res://Assets/Sprites/masa.png" id="3_o8bdp"]
+[ext_resource type="Texture2D" uid="uid://bjw3lwb6qm3hc" path="res://Assets/Sprites/scaun.png" id="4_2yp78"]
+[ext_resource type="Texture2D" uid="uid://decchaso3wr6" path="res://Assets/Sprites/tabla_fara_un_picior.png" id="5_l1sg7"]
+[ext_resource type="Texture2D" uid="uid://chht8l7jctpa4" path="res://Assets/Sprites/picior_de_tabla.png" id="6_x2xve"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0u3m"]
+size = Vector2(36, 19.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_robu8"]
+size = Vector2(20, 526.772)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7vo2"]
+size = Vector2(476.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tocxi"]
+size = Vector2(1174, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glh3i"]
+size = Vector2(1886, 20)
+
+[node name="clasa" type="Node2D"]
+script = ExtResource("1_xhptp")
+
+[node name="clasa" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(13.7143, 15.4286)
+texture = ExtResource("1_iw6ha")
+
+[node name="Door" type="Sprite2D" parent="."]
+position = Vector2(616, 496)
+scale = Vector2(6, 6)
+texture = ExtResource("2_cxh2d")
+
+[node name="Masa4" type="Sprite2D" parent="."]
+position = Vector2(1168, 900)
+scale = Vector2(8, 8)
+texture = ExtResource("3_o8bdp")
+
+[node name="Scaun" type="Sprite2D" parent="Masa4"]
+position = Vector2(-15, 1)
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("4_2yp78")
+
+[node name="Masa2" type="Sprite2D" parent="."]
+position = Vector2(1454, 712)
+scale = Vector2(8, 8)
+texture = ExtResource("3_o8bdp")
+
+[node name="Scaun" type="Sprite2D" parent="Masa2"]
+position = Vector2(-15, 1)
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("4_2yp78")
+
+[node name="Masa3" type="Sprite2D" parent="."]
+position = Vector2(1454, 900)
+scale = Vector2(8, 8)
+texture = ExtResource("3_o8bdp")
+
+[node name="Scaun" type="Sprite2D" parent="Masa3"]
+position = Vector2(-15, 1)
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("4_2yp78")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1096, 784, 1144, 824, 1240, 823, 1200, 783)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(287, 1)
+polygon = PackedVector2Array(1096, 784, 1144, 824, 1240, 823, 1200, 783)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(290, 189)
+polygon = PackedVector2Array(1096, 784, 1144, 824, 1240, 823, 1200, 783)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(0, 188)
+polygon = PackedVector2Array(1096, 784, 1144, 824, 1240, 823, 1200, 783)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1013, 809, 1033, 784, 1088, 784, 1088, 790, 1073, 809)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-2, 189)
+polygon = PackedVector2Array(1013, 809, 1033, 784, 1088, 784, 1088, 790, 1073, 809)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(283, 189)
+polygon = PackedVector2Array(1013, 809, 1033, 784, 1088, 784, 1088, 790, 1073, 809)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(283, 1)
+polygon = PackedVector2Array(1013, 809, 1033, 784, 1088, 784, 1088, 790, 1073, 809)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(1696, 882.25)
+shape = SubResource("RectangleShape2D_n0u3m")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(1804.5, 955)
+shape = SubResource("RectangleShape2D_n0u3m")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(42.5126, 818.16)
+rotation = 0.139626
+shape = SubResource("RectangleShape2D_robu8")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1883, 818)
+rotation = -0.122173
+shape = SubResource("RectangleShape2D_robu8")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(329.75, 574)
+shape = SubResource("RectangleShape2D_o7vo2")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1250, 575)
+shape = SubResource("RectangleShape2D_tocxi")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(960, 1090)
+shape = SubResource("RectangleShape2D_glh3i")
+
+[node name="Masa" type="Sprite2D" parent="."]
+position = Vector2(1168, 712)
+scale = Vector2(8, 8)
+texture = ExtResource("3_o8bdp")
+
+[node name="Scaun" type="Sprite2D" parent="Masa"]
+position = Vector2(-15, 1)
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("4_2yp78")
+
+[node name="TablaFaraUnPicior" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1810, 784)
+scale = Vector2(12, 12)
+texture = ExtResource("5_l1sg7")
+
+[node name="PiciorDeTabla" type="Sprite2D" parent="."]
+position = Vector2(1930, 1552)
+scale = Vector2(12, 12)
+texture = ExtResource("6_x2xve")
